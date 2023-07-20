@@ -1,7 +1,7 @@
 import ContainerWrapper from "./ContainerWrapper";
 import logo from "../assets/logo.png";
 import { AiFillPlayCircle } from "react-icons/ai";
-import { BsFillPlayFill } from "react-icons/bs";
+import { BsFillPlayFill, BsMouse } from "react-icons/bs";
 import { BiPlayCircle } from "react-icons/bi";
 import { RiCustomerService2Line } from "react-icons/ri";
 
@@ -11,6 +11,7 @@ import nftPages from "../assets/nft-pages.png";
 import contractOne from "../assets/contract-1.png";
 import contractTwo from "../assets/contract-2.png";
 import SupportCard from "./SupportCard";
+import FeatureCard from "./feature/FeatureCard";
 
 const Home = () => {
   return (
@@ -311,6 +312,37 @@ const Home = () => {
 
       </div>
 
+      {/* Features */}
+      <div className="features-wrap block w-full overflow-hidden bg-[#1d1e20] relative pt-[100px] pb-[58px]" id="features">
+        <div className="features-bg-text absolute top-[240px] left-[50%] translate-x-[-50%] text-[290px] text-[#ffffff05] font-semibold leading-[46px]">FEATURES</div>
+        <ContainerWrapper style={''}>
+          <h2 className="mb-10 text-white text-4xl leading-[42px]">More Features</h2>
+          <div className="block overflow-hidden text-center my-0 mx-auto max-w-[66%] mb-[53px] text-white text-[18px] leading-9">
+            Crypterio WordPress theme is in tune with all devices, browsers and platforms, retina ready and comes with Visual Composer as page builder for free. All customization options are available on the Front End editor and no coding skill required to create or edit content.
+          </div>
+
+          <div className="features flex flex-wrap my-0 mx-[-15px]">
+
+            <div className="feature block w-[30.7%] py-0 px-[15px]">
+              <div className="feature-inner flex flex-col justify-start items-center pt-[18px] px-0 pb-[30px] mb-[23px] rounded-[7px]">
+                <div className="icon-wrap flex relative min-h-[80px] items-start">
+                  <BsMouse size={'48px'} className="feature-icon text-[#f2c902]" />
+                  <span className="block absolute top-[-4px] left-[79%] bg-[#0048a8] text-white text-[12px] py-1 px-[10px] rounded-[10px]">included</span>
+                </div>
+                <h4 className="text-white text-lg mt-3 mb-5">Virtual Coin Widgets</h4>
+                <div className="feature-desc text-[#808080] max-w-[80%] leading-6 mb-0 text-[15px] block overflow-hidden text-center my-0 mx-auto">
+                  Virtual Coin Widgets included into Crypterio for free and offers 10 widgets for your crypto-project with 1000+ cryptocurrencies. Exchange Rates are updated every 10 minutes.
+                </div>
+              </div>
+            </div>
+
+            <FeatureCard />
+            <FeatureCard />
+          </div>
+
+         
+        </ContainerWrapper>
+      </div>
 
       {/* Support */}
       <div className="info-block block mt-[13px] relative pt-[85px] px-[0] pb-[7px]" id="support">

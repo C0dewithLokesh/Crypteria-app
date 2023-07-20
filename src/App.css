@@ -218,6 +218,31 @@ h2.left-heading:before {
   background-color: #ffc10a;
 }
 
+/* 
+  Features
+*/
+.features .feature .feature-inner {
+  transition: all 0.2s ease-in;
+}
+
+.features .feature:hover .feature-inner {
+  background: #f2c902;
+}
+
+.features .feature:hover .feature-inner .feature-icon {
+  color: black;
+}
+
+.features .feature:hover .feature-inner h4,
+.features .feature:hover .feature-inner .feature-desc {
+  color: black;
+}
+
+
+/* 
+  Support
+*/
+
 .info-block .info-desc {
   display: block;
   overflow: hidden;
