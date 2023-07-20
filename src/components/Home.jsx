@@ -12,6 +12,11 @@ import contractOne from "../assets/contract-1.png";
 import contractTwo from "../assets/contract-2.png";
 import SupportCard from "./SupportCard";
 import FeatureCard from "./feature/FeatureCard";
+import SectionHeader from "./SectionHeader";
+import HeaderImg from "./headersLogo/headerImg";
+import headOne from '../assets/head-1.png'
+import headTwo from '../assets/head-2.png'
+import headFive from '../assets/head-5.png'
 
 const Home = () => {
   return (
@@ -312,6 +317,25 @@ const Home = () => {
 
       </div>
 
+      {/* headers logo */}
+      <div className="headers-wrap block overflow-hidden relative pt-[101px] pb-[57px] bg-white" id="headers">
+        <div className="specials-bg-text top-[137px] leading-[40px] text-[#1d1e200d] text-[290px]">HEADERS</div>
+        <ContainerWrapper style={''}>
+          <SectionHeader 
+            heading={'8+ Ready Headers'} 
+            info={' ... and unlimited Headers with Header Builder.'}
+            infoStyle={'mb-[48px]'}
+          />
+
+          <div className="bottom block my-0 mx-[-15px]">
+            <HeaderImg headerImg={headOne} />
+            <HeaderImg headerImg={headTwo} />
+            <HeaderImg headerImg={headFive} />
+            <HeaderImg headerImg={headOne} />
+          </div>
+        </ContainerWrapper>
+      </div>
+
       {/* Features */}
       <div className="features-wrap block w-full overflow-hidden bg-[#1d1e20] relative pt-[100px] pb-[58px]" id="features">
         <div className="features-bg-text absolute top-[240px] left-[50%] translate-x-[-50%] text-[290px] text-[#ffffff05] font-semibold leading-[46px]">FEATURES</div>
@@ -350,12 +374,7 @@ const Home = () => {
           SUPPORT
         </div>
         <ContainerWrapper style={''}>
-          <h2 className="text-center text-[32px] leading-[42px] mb-10">
-            Limitless Support
-          </h2>
-          <div className="info-desc">
-            We care about our customers and provide free 24/7 support. You can ask your questions using our Live Chat or Ticket System.
-          </div>
+          <SectionHeader heading={'Limitless Support'} info={'We care about our customers and provide free 24/7 support. You can ask your questions using our Live Chat or Ticket System.'} />
 
           <div className="info-wrap flex justify-around bg-cover pt-12 px-0 pb-[95px] relative z-[2] gap-6">
             <SupportCard
