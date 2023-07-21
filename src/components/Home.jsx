@@ -14,9 +14,11 @@ import SupportCard from "./SupportCard";
 import FeatureCard from "./feature/FeatureCard";
 import SectionHeader from "./SectionHeader";
 import HeaderImg from "./headersLogo/headerImg";
-import headOne from '../assets/head-1.png'
-import headTwo from '../assets/head-2.png'
-import headFive from '../assets/head-5.png'
+import headOne from '../assets/head-1.png';
+import headTwo from '../assets/head-2.png';
+import headFive from '../assets/head-5.png';
+import langTwo from '../assets/langs-2.png';
+import SectionSideInfo from "./SectionSideInfo";
 
 const Home = () => {
   return (
@@ -277,7 +279,7 @@ const Home = () => {
         <div className="converter-wrap bg-white pt-10 pb-[94px]">
           <ContainerWrapper style={'flex flex-nowrap justify-start items-start flex-row-reverse'}>
             <div className="left block w-2/4 mt-[11px]">
-              <h2 className="left-heading text-[30px] text-left overflow-hidden relative mt-[74px] mb-10 w-full leading-[36px]">
+              <h2 className="left-heading text-[30px] text-left overflow-hidden relative mt-[14px] mb-10 w-full leading-[36px]">
                 ICO Whitelist Pre-Signup
                 <br />
                 and Smart Contract Integration
@@ -310,6 +312,28 @@ const Home = () => {
                 <div className="block w-full pl-[13px] pt-[17px] max-w-full ml-20 mt-[6px] absolute">
                   <img src={contractTwo} alt="" />
                 </div>
+              </div>
+            </div>
+          </ContainerWrapper>
+        </div>
+
+        {/* ICO listing */}
+        <div className="ico-listing bg-white pt-[88px]">
+
+        </div>
+        
+        {/* theme Localization */}
+        <div className="theme-localization pt-[83px] px-0 pb-[62px]">
+          <ContainerWrapper style={'flex flex-start'}>
+            <SectionSideInfo
+              heading={'Full Theme Localization'}
+              infoOne={'PO (Portable Objects) localization files are included'}
+              infoTwo={'Crypterio is available in German, French, Spanish, Japanese, Chinese, Korean, Russian, and Turkish languages out of the box.'}
+            />
+
+            <div className="right flex w-2/4 flex-col">
+              <div className="img block overflow-hidden w-auto">
+                <img src={langTwo} className="block mt-0 mx-auto" alt="" />
               </div>
             </div>
           </ContainerWrapper>
