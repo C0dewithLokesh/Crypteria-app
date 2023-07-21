@@ -2,7 +2,6 @@ import ContainerWrapper from "./ContainerWrapper";
 import logo from "../assets/logo.png";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { BsFillPlayFill, BsMouse } from "react-icons/bs";
-import { BiPlayCircle } from "react-icons/bi";
 import { RiCustomerService2Line } from "react-icons/ri";
 
 import demo1 from "../assets/demo1.jpg";
@@ -18,7 +17,11 @@ import headOne from '../assets/head-1.png';
 import headTwo from '../assets/head-2.png';
 import headFive from '../assets/head-5.png';
 import langTwo from '../assets/langs-2.png';
+import listingDb from '../assets/listing-db.png';
+import icoOne from '../assets/ico_listing_1.png';
+import icoTwo from '../assets/ico_listing_2.png';
 import SectionSideInfo from "./SectionSideInfo";
+import WatchVideoBtn from "./WatchVideoBtn";
 
 const Home = () => {
   return (
@@ -296,11 +299,7 @@ const Home = () => {
                 Just integrate your Smart Contract with a Whitelist through CSV/XML readable format to automate token distribution to whitelisted ICO applicants.
               </div>
 
-              <div className="btn-wrap pt-[11px] max-w-[200px] pl-4 block">
-                <a href="#" className="watch-video">
-                  <BiPlayCircle size={'24px'} className="mr-[14px]" /> Watch Video
-                </a>
-              </div>
+              <WatchVideoBtn />
             </div>
 
             <div className="right block w-2/4">
@@ -319,7 +318,27 @@ const Home = () => {
 
         {/* ICO listing */}
         <div className="ico-listing bg-white pt-[88px]">
-
+          <ContainerWrapper style={'flex'}>
+            <div className="left flex w-[44%] flex-col pr-20 relative mr-[60px]">
+              <div className="img ml-[-145px] z-0">
+                <img src={listingDb} alt="" />
+              </div>
+              <div className="img listing-img-2 absolute top-[42px] z-[2] right-[128px] rounded-md">
+                <img src={icoOne} alt="" />
+              </div>
+              <div className="img listing-img-2 absolute top-[148px] z-[1] right-[88px] rounded-md">
+                <img src={icoTwo} alt="" />
+              </div>
+            </div>
+            <SectionSideInfo
+              headingStyle={'ico-heading'}
+              heading={'ICO Listing / Database'}
+              infoOne=' ICO Directory demo allows you to create a listing website and publish ongoing, upcoming, and ended ICOs or token sales data.'
+              infoTwo={' Receive submissions from ICO startups and list ICOs by category and status. Engage your visitors via subscription and build a customer database to share ICO insights and updates.'}
+              // eslint-disable-next-line react/no-children-prop
+              children={<WatchVideoBtn />}
+            />
+          </ContainerWrapper>
         </div>
         
         {/* theme Localization */}

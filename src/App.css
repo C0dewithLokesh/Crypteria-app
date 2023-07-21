@@ -154,6 +154,12 @@ h2:before {
   box-shadow: 0px 10px 30px 10px rgba(0, 0, 0, 0.25);
 }
 
+.ico-listing .img {
+  display: block;
+  overflow: hidden;
+  width: auto;
+}
+
 .bg-demos-text,
 .specials-bg-text,
 .support-bg-text {
@@ -216,6 +222,14 @@ h2.left-heading:before {
 
 .watch-video:hover {
   background-color: #ffc10a;
+}
+
+.listing-img-2 {
+  box-shadow: -23px 13px 70px -1px rgba(0, 0, 0, 0.5);
+}
+
+.ico-heading {
+  margin-top: 22px !important;
 }
 
 /* 
