@@ -1,3 +1,5 @@
+import "animate.css";
+
 import ContainerWrapper from "./ContainerWrapper";
 import logo from "../assets/logo.png";
 import { AiFillPlayCircle } from "react-icons/ai";
@@ -13,17 +15,21 @@ import SupportCard from "./SupportCard";
 import FeatureCard from "./feature/FeatureCard";
 import SectionHeader from "./SectionHeader";
 import HeaderImg from "./headersLogo/headerImg";
-import headOne from '../assets/head-1.png';
-import headTwo from '../assets/head-2.png';
-import headFive from '../assets/head-5.png';
-import langTwo from '../assets/langs-2.png';
-import listingDb from '../assets/listing-db.png';
-import icoOne from '../assets/ico_listing_1.png';
-import icoTwo from '../assets/ico_listing_2.png';
+import headOne from "../assets/head-1.png";
+import headTwo from "../assets/head-2.png";
+import headFive from "../assets/head-5.png";
+import langTwo from "../assets/langs-2.png";
+import listingDb from "../assets/listing-db.png";
+import icoOne from "../assets/ico_listing_1.png";
+import icoTwo from "../assets/ico_listing_2.png";
 import SectionSideInfo from "./SectionSideInfo";
 import WatchVideoBtn from "./WatchVideoBtn";
+import useIntersectionObserver from "./useIntersectionObserver";
 
 const Home = () => {
+  const [ref1, isIntersecting1] = useIntersectionObserver("animate__fadeInUp");
+  const [ref2, isIntersecting2] = useIntersectionObserver("animate__zoomIn");
+
   return (
     <>
       {/* Header */}
@@ -131,10 +137,15 @@ const Home = () => {
             and private-practice ICO Advisors.
           </div>
 
-          <div className="demo-list -mx-[15px] flex flex-row flex-wrap justify-center items-start">
+          <div
+            className={`demo-list -mx-[15px] flex flex-row flex-wrap justify-center items-start`}
+          >
             <a
+              ref={ref1}
               href="#"
-              className="demo-container block px-[15px] max-w-[30.7%] mb-10"
+              className={`animate__animated ${
+                isIntersecting1 ? "animate__fadeInUp" : ""
+              } animate__faster demo-container block px-[15px] max-w-[30.7%] mb-10`}
             >
               <div className="demo">
                 <div className="img block w-full overflow-hidden rounded-[10px] relative top-0 shadow-md">
@@ -150,9 +161,12 @@ const Home = () => {
                 </h3>
               </div>
             </a>
+
             <a
               href="#"
-              className="demo-container block px-[15px] max-w-[30.7%] mb-10"
+              className={`animate__animated ${
+                isIntersecting1 ? "animate__fadeInUp" : ""
+              } demo-container block px-[15px] max-w-[30.7%] mb-10`}
             >
               <div className="demo">
                 <div className="img block w-full overflow-hidden rounded-[10px] relative top-0 shadow-md">
@@ -168,9 +182,13 @@ const Home = () => {
                 </h3>
               </div>
             </a>
+
             <a
               href="#"
-              className="demo-container block px-[15px] max-w-[30.7%] mb-10"
+              className={`animate__animated ${
+                isIntersecting1 ? "animate__fadeInUp" : ""
+              } demo-container block px-[15px] max-w-[30.7%] mb-10`}
+              style={{ "--animate-duration": "1.5s" }}
             >
               <div className="demo">
                 <div className="img block w-full overflow-hidden rounded-[10px] relative top-0 shadow-md">
@@ -199,7 +217,12 @@ const Home = () => {
         </div>
 
         <ContainerWrapper style={""}>
-          <div className="specials mb-[48px]">
+          <div
+            ref={ref2}
+            className={`animate__animated ${
+              isIntersecting2 ? "animate__zoomIn" : ""
+            } specials mb-[48px]`}
+          >
             <h2 className="mb-[40px] text-[36px] leading-[42px]">
               Crypterio Specials
             </h2>
@@ -213,17 +236,23 @@ const Home = () => {
 
           <div className="countdown-wrap mb-[300px] flex flex-nowrap justify-start items-start">
             <div className="left block w-2/4">
-              <h2 className="left-heading text-[30px] text-left overflow-hidden relative mt-[74px] mb-10 w-full leading-[36px]">
+              <h2 className={`animate__animated ${isIntersecting2 ? 'animate__fadeInUp' : ''} left-heading text-[30px] text-left overflow-hidden relative mt-[74px] mb-10 w-full leading-[36px]`}
+                style={{'--animate-duration': '1.5s'}}
+              >
                 Advanced ICO Launching Countdown
               </h2>
 
-              <div className="desc block mb-[28px] pr-[15px] mx-auto text-lg leading-[36px]">
+              <div className={`animate__animated ${isIntersecting2 ? 'animate__fadeInUp' : ''} desc block mb-[28px] pr-[15px] mx-auto text-lg leading-[36px]`}
+                style={{'--animate-duration': '1.7s'}}
+              >
                 ICO development agencies and Blockchain technology consulting
                 business can utilize tailor-made special features like ICO
                 ticker module ready for ICO gateway integration.
               </div>
 
-              <div className="text-[#595959] block mb-[28px] pr-[15px] mx-auto text-base leading-[30px]">
+              <div className={`animate__animated ${isIntersecting2 ? 'animate__fadeInUp' : ''} text-[#595959] block mb-[28px] pr-[15px] mx-auto text-base leading-[30px]`}
+                style={{'--animate-duration': '1.9s'}}
+              >
                 Now you’re ready to pack your professional website with great
                 content that will engage and inspire potential customers. Choose
                 how you want to display your services and case studies, for
@@ -231,7 +260,9 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="right w-2/4">
+            <div className={`animate__animated ${isIntersecting2 ? 'animate__fadeInRight' : ''} right w-2/4`}
+              style={{'--animate-duration': '1.5s'}}
+            >
               <div className="img block pl-20 w-full mx-auto relative">
                 <img
                   src={countdownBgImg}
@@ -280,7 +311,11 @@ const Home = () => {
 
         {/* Converter Wrap */}
         <div className="converter-wrap bg-white pt-10 pb-[94px]">
-          <ContainerWrapper style={'flex flex-nowrap justify-start items-start flex-row-reverse'}>
+          <ContainerWrapper
+            style={
+              "flex flex-nowrap justify-start items-start flex-row-reverse"
+            }
+          >
             <div className="left block w-2/4 mt-[11px]">
               <h2 className="left-heading text-[30px] text-left overflow-hidden relative mt-[14px] mb-10 w-full leading-[36px]">
                 ICO Whitelist Pre-Signup
@@ -289,14 +324,21 @@ const Home = () => {
               </h2>
 
               <div className="desc block mb-[28px] pr-[15px] mx-auto text-lg leading-[36px]">
-                Crypterio is ready for a Smart Contract and an ICO Whitelist Pre-Signup integration through CSV/XML compatible standard to manage token distribution.
+                Crypterio is ready for a Smart Contract and an ICO Whitelist
+                Pre-Signup integration through CSV/XML compatible standard to
+                manage token distribution.
               </div>
 
               <div className="text-[#595959] block mb-[28px] pr-[15px] mx-auto text-base leading-[30px]">
-                A genuine whitelisting implies that ICO participants can effortlessly and securely register, pass KYC/AML check, get approved, and get listed on a ICO Pre-Signup Whitelist to purchase tokens during the Initial Coin Offering. 
+                A genuine whitelisting implies that ICO participants can
+                effortlessly and securely register, pass KYC/AML check, get
+                approved, and get listed on a ICO Pre-Signup Whitelist to
+                purchase tokens during the Initial Coin Offering.
                 <br />
                 <br />
-                Just integrate your Smart Contract with a Whitelist through CSV/XML readable format to automate token distribution to whitelisted ICO applicants.
+                Just integrate your Smart Contract with a Whitelist through
+                CSV/XML readable format to automate token distribution to
+                whitelisted ICO applicants.
               </div>
 
               <WatchVideoBtn />
@@ -318,7 +360,7 @@ const Home = () => {
 
         {/* ICO listing */}
         <div className="ico-listing bg-white pt-[88px]">
-          <ContainerWrapper style={'flex'}>
+          <ContainerWrapper style={"flex"}>
             <div className="left flex w-[44%] flex-col pr-20 relative mr-[60px]">
               <div className="img ml-[-145px] z-0">
                 <img src={listingDb} alt="" />
@@ -331,23 +373,27 @@ const Home = () => {
               </div>
             </div>
             <SectionSideInfo
-              headingStyle={'ico-heading'}
-              heading={'ICO Listing / Database'}
-              infoOne=' ICO Directory demo allows you to create a listing website and publish ongoing, upcoming, and ended ICOs or token sales data.'
-              infoTwo={' Receive submissions from ICO startups and list ICOs by category and status. Engage your visitors via subscription and build a customer database to share ICO insights and updates.'}
+              headingStyle={"ico-heading"}
+              heading={"ICO Listing / Database"}
+              infoOne=" ICO Directory demo allows you to create a listing website and publish ongoing, upcoming, and ended ICOs or token sales data."
+              infoTwo={
+                " Receive submissions from ICO startups and list ICOs by category and status. Engage your visitors via subscription and build a customer database to share ICO insights and updates."
+              }
               // eslint-disable-next-line react/no-children-prop
               children={<WatchVideoBtn />}
             />
           </ContainerWrapper>
         </div>
-        
+
         {/* theme Localization */}
         <div className="theme-localization pt-[83px] px-0 pb-[62px]">
-          <ContainerWrapper style={'flex flex-start'}>
+          <ContainerWrapper style={"flex flex-start"}>
             <SectionSideInfo
-              heading={'Full Theme Localization'}
-              infoOne={'PO (Portable Objects) localization files are included'}
-              infoTwo={'Crypterio is available in German, French, Spanish, Japanese, Chinese, Korean, Russian, and Turkish languages out of the box.'}
+              heading={"Full Theme Localization"}
+              infoOne={"PO (Portable Objects) localization files are included"}
+              infoTwo={
+                "Crypterio is available in German, French, Spanish, Japanese, Chinese, Korean, Russian, and Turkish languages out of the box."
+              }
             />
 
             <div className="right flex w-2/4 flex-col">
@@ -357,17 +403,21 @@ const Home = () => {
             </div>
           </ContainerWrapper>
         </div>
-
       </div>
 
       {/* headers logo */}
-      <div className="headers-wrap block overflow-hidden relative pt-[101px] pb-[57px] bg-white" id="headers">
-        <div className="specials-bg-text top-[137px] leading-[40px] text-[#1d1e200d] text-[290px]">HEADERS</div>
-        <ContainerWrapper style={''}>
-          <SectionHeader 
-            heading={'8+ Ready Headers'} 
-            info={' ... and unlimited Headers with Header Builder.'}
-            infoStyle={'mb-[48px]'}
+      <div
+        className="headers-wrap block overflow-hidden relative pt-[101px] pb-[57px] bg-white"
+        id="headers"
+      >
+        <div className="specials-bg-text top-[137px] leading-[40px] text-[#1d1e200d] text-[290px]">
+          HEADERS
+        </div>
+        <ContainerWrapper style={""}>
+          <SectionHeader
+            heading={"8+ Ready Headers"}
+            info={" ... and unlimited Headers with Header Builder."}
+            infoStyle={"mb-[48px]"}
           />
 
           <div className="bottom block my-0 mx-[-15px]">
@@ -380,25 +430,44 @@ const Home = () => {
       </div>
 
       {/* Features */}
-      <div className="features-wrap block w-full overflow-hidden bg-[#1d1e20] relative pt-[100px] pb-[58px]" id="features">
-        <div className="features-bg-text absolute top-[240px] left-[50%] translate-x-[-50%] text-[290px] text-[#ffffff05] font-semibold leading-[46px]">FEATURES</div>
-        <ContainerWrapper style={''}>
-          <h2 className="mb-10 text-white text-4xl leading-[42px]">More Features</h2>
+      <div
+        className="features-wrap block w-full overflow-hidden bg-[#1d1e20] relative pt-[100px] pb-[58px]"
+        id="features"
+      >
+        <div className="features-bg-text absolute top-[240px] left-[50%] translate-x-[-50%] text-[290px] text-[#ffffff05] font-semibold leading-[46px]">
+          FEATURES
+        </div>
+        <ContainerWrapper style={""}>
+          <h2 className="mb-10 text-white text-4xl leading-[42px]">
+            More Features
+          </h2>
           <div className="block overflow-hidden text-center my-0 mx-auto max-w-[66%] mb-[53px] text-white text-[18px] leading-9">
-            Crypterio WordPress theme is in tune with all devices, browsers and platforms, retina ready and comes with Visual Composer as page builder for free. All customization options are available on the Front End editor and no coding skill required to create or edit content.
+            Crypterio WordPress theme is in tune with all devices, browsers and
+            platforms, retina ready and comes with Visual Composer as page
+            builder for free. All customization options are available on the
+            Front End editor and no coding skill required to create or edit
+            content.
           </div>
 
           <div className="features flex flex-wrap my-0 mx-[-15px]">
-
             <div className="feature block w-[30.7%] py-0 px-[15px]">
               <div className="feature-inner flex flex-col justify-start items-center pt-[18px] px-0 pb-[30px] mb-[23px] rounded-[7px]">
                 <div className="icon-wrap flex relative min-h-[80px] items-start">
-                  <BsMouse size={'48px'} className="feature-icon text-[#f2c902]" />
-                  <span className="block absolute top-[-4px] left-[79%] bg-[#0048a8] text-white text-[12px] py-1 px-[10px] rounded-[10px]">included</span>
+                  <BsMouse
+                    size={"48px"}
+                    className="feature-icon text-[#f2c902]"
+                  />
+                  <span className="block absolute top-[-4px] left-[79%] bg-[#0048a8] text-white text-[12px] py-1 px-[10px] rounded-[10px]">
+                    included
+                  </span>
                 </div>
-                <h4 className="text-white text-lg mt-3 mb-5">Virtual Coin Widgets</h4>
+                <h4 className="text-white text-lg mt-3 mb-5">
+                  Virtual Coin Widgets
+                </h4>
                 <div className="feature-desc text-[#808080] max-w-[80%] leading-6 mb-0 text-[15px] block overflow-hidden text-center my-0 mx-auto">
-                  Virtual Coin Widgets included into Crypterio for free and offers 10 widgets for your crypto-project with 1000+ cryptocurrencies. Exchange Rates are updated every 10 minutes.
+                  Virtual Coin Widgets included into Crypterio for free and
+                  offers 10 widgets for your crypto-project with 1000+
+                  cryptocurrencies. Exchange Rates are updated every 10 minutes.
                 </div>
               </div>
             </div>
@@ -406,38 +475,49 @@ const Home = () => {
             <FeatureCard />
             <FeatureCard />
           </div>
-
-         
         </ContainerWrapper>
       </div>
 
       {/* Support */}
-      <div className="info-block block mt-[13px] relative pt-[85px] px-[0] pb-[7px]" id="support">
+      <div
+        className="info-block block mt-[13px] relative pt-[85px] px-[0] pb-[7px]"
+        id="support"
+      >
         <div className="support-bg-text top-[223px] tracking-[40px]">
           SUPPORT
         </div>
-        <ContainerWrapper style={''}>
-          <SectionHeader heading={'Limitless Support'} info={'We care about our customers and provide free 24/7 support. You can ask your questions using our Live Chat or Ticket System.'} />
+        <ContainerWrapper style={""}>
+          <SectionHeader
+            heading={"Limitless Support"}
+            info={
+              "We care about our customers and provide free 24/7 support. You can ask your questions using our Live Chat or Ticket System."
+            }
+          />
 
           <div className="info-wrap flex justify-around bg-cover pt-12 px-0 pb-[95px] relative z-[2] gap-6">
             <SupportCard
-              icon={<RiCustomerService2Line size={'64px'} />}
-              heading={'24/7 Elite Support'}
-              description={'Our exceptional support team is always on hand and ready to help. You can use Live Chat or our Ticket system to resolve your issues in a flash'}
+              icon={<RiCustomerService2Line size={"64px"} />}
+              heading={"24/7 Elite Support"}
+              description={
+                "Our exceptional support team is always on hand and ready to help. You can use Live Chat or our Ticket system to resolve your issues in a flash"
+              }
             />
             <SupportCard
-              icon={<RiCustomerService2Line size={'64px'} />}
-              heading={'24/7 Elite Support'}
-              description={'Our exceptional support team is always on hand and ready to help. You can use Live Chat or our Ticket system to resolve your issues in a flash'}
+              icon={<RiCustomerService2Line size={"64px"} />}
+              heading={"24/7 Elite Support"}
+              description={
+                "Our exceptional support team is always on hand and ready to help. You can use Live Chat or our Ticket system to resolve your issues in a flash"
+              }
             />
             <SupportCard
-              icon={<RiCustomerService2Line size={'64px'} />}
-              heading={'24/7 Elite Support'}
-              description={'Our exceptional support team is always on hand and ready to help. You can use Live Chat or our Ticket system to resolve your issues in a flash'}
+              icon={<RiCustomerService2Line size={"64px"} />}
+              heading={"24/7 Elite Support"}
+              description={
+                "Our exceptional support team is always on hand and ready to help. You can use Live Chat or our Ticket system to resolve your issues in a flash"
+              }
             />
           </div>
         </ContainerWrapper>
-
       </div>
     </>
   );
