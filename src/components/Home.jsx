@@ -29,6 +29,7 @@ import useIntersectionObserver from "./useIntersectionObserver";
 const Home = () => {
   const [ref1, isIntersecting1] = useIntersectionObserver("animate__fadeInUp");
   const [ref2, isIntersecting2] = useIntersectionObserver("animate__zoomIn");
+  const [ref3, isIntersecting3] = useIntersectionObserver("animate__fadeInUp");
 
   return (
     <>
@@ -275,7 +276,7 @@ const Home = () => {
         </ContainerWrapper>
 
         {/* NFT Pages */}
-        <div className="nft-wrap bg-white -mb-[147px]">
+        <div ref={ref3} className={`animate__animated ${isIntersecting3 ? 'animate__fadeInUp' : ''} nft-wrap bg-white -mb-[147px]`}>
           <ContainerWrapper style={""}>
             <div className="nft-wrap-inner overflow-hidden rounded-[40px] bg-[#d3ff5c] flex -translate-y-[200px]">
               <div className="left-side py-[32px] px-[60px] max-w-[610px] w-full box-content">
