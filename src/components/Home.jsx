@@ -237,22 +237,31 @@ const Home = () => {
 
           <div className="countdown-wrap mb-[300px] flex flex-nowrap justify-start items-start">
             <div className="left block w-2/4">
-              <h2 className={`animate__animated ${isIntersecting2 ? 'animate__fadeInUp' : ''} left-heading text-[30px] text-left overflow-hidden relative mt-[74px] mb-10 w-full leading-[36px]`}
-                style={{'--animate-duration': '1.5s'}}
+              <h2
+                className={`animate__animated ${
+                  isIntersecting2 ? "animate__fadeInUp" : ""
+                } left-heading text-[30px] text-left overflow-hidden relative mt-[74px] mb-10 w-full leading-[36px]`}
+                style={{ "--animate-duration": "1.5s" }}
               >
                 Advanced ICO Launching Countdown
               </h2>
 
-              <div className={`animate__animated ${isIntersecting2 ? 'animate__fadeInUp' : ''} desc block mb-[28px] pr-[15px] mx-auto text-lg leading-[36px]`}
-                style={{'--animate-duration': '1.7s'}}
+              <div
+                className={`animate__animated ${
+                  isIntersecting2 ? "animate__fadeInUp" : ""
+                } desc block mb-[28px] pr-[15px] mx-auto text-lg leading-[36px]`}
+                style={{ "--animate-duration": "1.7s" }}
               >
                 ICO development agencies and Blockchain technology consulting
                 business can utilize tailor-made special features like ICO
                 ticker module ready for ICO gateway integration.
               </div>
 
-              <div className={`animate__animated ${isIntersecting2 ? 'animate__fadeInUp' : ''} text-[#595959] block mb-[28px] pr-[15px] mx-auto text-base leading-[30px]`}
-                style={{'--animate-duration': '1.9s'}}
+              <div
+                className={`animate__animated ${
+                  isIntersecting2 ? "animate__fadeInUp" : ""
+                } text-[#595959] block mb-[28px] pr-[15px] mx-auto text-base leading-[30px]`}
+                style={{ "--animate-duration": "1.9s" }}
               >
                 Now you’re ready to pack your professional website with great
                 content that will engage and inspire potential customers. Choose
@@ -261,8 +270,11 @@ const Home = () => {
               </div>
             </div>
 
-            <div className={`animate__animated ${isIntersecting2 ? 'animate__fadeInRight' : ''} right w-2/4`}
-              style={{'--animate-duration': '1.5s'}}
+            <div
+              className={`animate__animated ${
+                isIntersecting2 ? "animate__fadeInRight" : ""
+              } right w-2/4`}
+              style={{ "--animate-duration": "1.5s" }}
             >
               <div className="img block pl-20 w-full mx-auto relative">
                 <img
@@ -276,7 +288,12 @@ const Home = () => {
         </ContainerWrapper>
 
         {/* NFT Pages */}
-        <div ref={ref3} className={`animate__animated ${isIntersecting3 ? 'animate__fadeInUp' : ''} nft-wrap bg-white -mb-[147px]`}>
+        <div
+          ref={ref3}
+          className={`animate__animated ${
+            isIntersecting3 ? "animate__fadeInUp" : ""
+          } nft-wrap bg-white -mb-[147px]`}
+        >
           <ContainerWrapper style={""}>
             <div className="nft-wrap-inner overflow-hidden rounded-[40px] bg-[#d3ff5c] flex -translate-y-[200px]">
               <div className="left-side py-[32px] px-[60px] max-w-[610px] w-full box-content">
@@ -358,6 +375,15 @@ const Home = () => {
             </div>
           </ContainerWrapper>
         </div>
+
+        {/* Real time wrap */}
+        {/* <div className="real-time-wrap block w-full pt-[94px] pb-[53px]">
+          <ContainerWrapper
+            style={"flex flex-row flex-nowrap justify-start items-start"}
+          >
+            
+          </ContainerWrapper>
+        </div> */}
 
         {/* ICO listing */}
         <div className="ico-listing bg-white pt-[88px]">
